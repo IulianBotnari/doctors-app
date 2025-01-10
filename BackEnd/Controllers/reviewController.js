@@ -1,4 +1,4 @@
-const db = require('../database/db')
+const db = require('../DB/db_connection');
 const { verifyDoctorId, ratingRegex, nameRegex } = require('../utils/helper.js');
 
 // recupera tutte le recensioni presenti nel data base

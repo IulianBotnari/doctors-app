@@ -1,4 +1,4 @@
-const db = require('../database/db');
+const db = require('../DB/db_connection');
 const { emailRegex, phoneRegex } = require('../utils/helper');
 
 // Recupera tutti i dottori

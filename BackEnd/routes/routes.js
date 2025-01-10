@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const doctorsController = require('../controllers/doctorsController')
-const reviewController = require('../controllers/reviewController')
+const doctorsController = require('../Controllers/doctorController')
+const reviewController = require('../Controllers/reviewController')
 
 //Doctors routes
 router.get("/doctors", doctorsController.index);  // List all doctors
