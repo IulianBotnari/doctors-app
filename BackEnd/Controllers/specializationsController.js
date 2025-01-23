@@ -1,4 +1,4 @@
-const db = require('../DB/db_connection');
+const db = require('../database/db');
 
 // Recupera tutte le specializzazioni
 function index(req, res) {

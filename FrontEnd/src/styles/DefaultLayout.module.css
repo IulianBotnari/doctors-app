@@ -1,0 +1,85 @@
+/* Header style */
+header {
+    height: 10vh;
+    background-color: black;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+    div {
+        height: 100%;
+    }
+
+    h1 {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: white;
+
+    }
+
+    .logo {
+
+        height: 150%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        margin-right: 1.3rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+        }
+    }
+
+    @media (max-width: 425px) {
+        header {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+
+/* Main style */
+main {
+    height: 80vh;
+    overflow-y: auto;
+    background-image: url("/dottore.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+
+    height: 12px;
+
+}
+
+::-webkit-scrollbar-track {
+    background: #965e8c;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5c1550;
+
+}
+
+
+/* Footer style */
+footer {
+    height: 10vh;
+    padding: 1.8rem;
+    width: 100%;
+    background-color: black;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 400px) {
+    footer {
+        font-size: 12px;
+    }
+}

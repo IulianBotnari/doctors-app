@@ -5,7 +5,7 @@ const server = express()
 const env = require('dotenv').config()
 
 const host = process.env.HOST || "http://localhost"
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3004
 
 server.use(cors())
 server.use(express.json())
