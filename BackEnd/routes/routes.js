@@ -1,22 +1,29 @@
 const express = require('express');
 const router = express.Router();
 
-const doctorsController = require('../Controllers/doctorController')
-const reviewController = require('../Controllers/reviewController')
+const doctorsController = require('../Controllers/doctorController');
+const reviewController = require('../Controllers/reviewController');
+const specializationsController = require('../Controllers/specializationsController');
+const getDoctorBySpecializations = require('../Controllers/doctorsBySpecializations');
 
-//Doctors routes
-router.get("/doctors", doctorsController.index);  // List all doctors
-router.post("/doctors", doctorsController.store); // Add new doctor
-router.delete("/doctors/:id", doctorsController.destroy); // Delete a doctor
-
+// Doctors routes
+router.get('/doctors', doctorsController.index); // List all doctors
+router.get('/doctors/specializations/:specialization', getDoctorBySpecializations.getDoctorBySpecializations)
+router.get('/doctors/:id/average-rating', doctorsController.getAverageRating); // Get average rating of a specific doctor
+router.post('/doctors', doctorsController.store); // Add new doctor with optional specializations
+router.post('/doctors/:doctor_id/send-email', doctorsController.sendEmailToDoctor); // Send email to a specific doctor
+router.delete('/doctors/:id', doctorsController.destroy); // Delete a doctor
 
 // Review routes
-router.get("/reviews", reviewController.getReviews)
-router.get("/reviews/:id", reviewController.getReviewById)
-router.post("/reviews", reviewController.postReview)
-router.delete("/reviews/:id", reviewController.deleteReviewById)
+router.get('/reviews', reviewController.getReviews); // List all reviews
+router.get('/reviews/:id', reviewController.getReviewById); // Get reviews of a specific doctor
+router.post('/reviews', reviewController.postReview); // Add a new review
+router.delete('/reviews/:id', reviewController.deleteReviewById); // Delete a specific review by ID
 
-
+// Specializations routes
+router.get('/specializations', specializationsController.index); // List all specializations
+// router.post('/specializations', specializationsController.store); // Add a new specialization
+// router.delete('/specializations/:id', specializationsController.destroy); // Delete a specialization
 
 
 module.exports = router;
